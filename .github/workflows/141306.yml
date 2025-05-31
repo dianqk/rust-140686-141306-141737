@@ -8,7 +8,7 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  ring:
+  ring-xcode15-2:
     runs-on: macos-14
     continue-on-error: true
     steps:
@@ -17,20 +17,16 @@ jobs:
           submodules: recursive
       - run: ./ring.sh /Applications/Xcode_15.2.app/Contents/Developer
         working-directory: ./141306
-        continue-on-error: true
+  ring-xcode15-3:
+    runs-on: macos-14
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
       - run: ./ring.sh /Applications/Xcode_15.3.app/Contents/Developer
         working-directory: ./141306
-        continue-on-error: true
-      - run: ./ring.sh /Applications/Xcode_15.4.app/Contents/Developer
-        working-directory: ./141306
-        continue-on-error: true
-      - run: ./ring.sh /Applications/Xcode_16.1.app/Contents/Developer
-        working-directory: ./141306
-        continue-on-error: true
-      - run: ./ring.sh /Applications/Xcode_16.2.app/Contents/Developer
-        working-directory: ./141306
-        continue-on-error: true
-  minimum:
+  minimum-xcode15-2:
     runs-on: macos-14
     continue-on-error: true
     steps:
@@ -39,16 +35,12 @@ jobs:
           submodules: recursive
       - run: ./minimum.sh /Applications/Xcode_15.2.app/Contents/Developer
         working-directory: ./141306
-        continue-on-error: true
+  minimum-xcode15-3:
+    runs-on: macos-14
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
       - run: ./minimum.sh /Applications/Xcode_15.3.app/Contents/Developer
         working-directory: ./141306
-        continue-on-error: true
-      - run: ./minimum.sh /Applications/Xcode_15.4.app/Contents/Developer
-        working-directory: ./141306
-        continue-on-error: true
-      - run: ./minimum.sh /Applications/Xcode_16.1.app/Contents/Developer
-        working-directory: ./141306
-        continue-on-error: true
-      - run: ./minimum.sh /Applications/Xcode_16.2.app/Contents/Developer
-        working-directory: ./141306
-        continue-on-error: true
