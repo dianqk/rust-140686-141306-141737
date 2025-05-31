@@ -1,0 +1,25 @@
+name: PR141737 (aarch64-linux-*)
+
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  ndk:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      matrix:
+        ndk-version: [27.2.12479018, 28.1.13356709]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: NDK ${{ matrix.ndk-version }}
+        working-directory: ./141306/ring
+        run: |
+          export ANDROID_NDK_ROOT=$ANDROID_HOME/ndk/${{ matrix.ndk-version }}
+          mk/cargo.sh test --target=aarch64-linux-android --no-run --release

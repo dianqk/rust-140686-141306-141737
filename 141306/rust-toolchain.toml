@@ -2,4 +2,4 @@
 channel = "1.87.0"
 components = ["rustc", "cargo"]
 profile = "minimal"
-targets = ["x86_64-apple-darwin"]
+targets = ["x86_64-apple-darwin", "aarch64-linux-android"]

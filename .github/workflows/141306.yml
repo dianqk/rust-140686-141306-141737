@@ -1,4 +1,4 @@
-name: PR141306
+name: PR141306 (ld-prime)
 
 on:
   push:
