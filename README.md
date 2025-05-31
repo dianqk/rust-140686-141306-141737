@@ -35,3 +35,5 @@ I haven't analyze this issue yet, but I can see Xcode 15.3 has fixed it: https:/
 LLVM 18.1 introduces a new relocation: `R_AARCH64_GOTPCREL32`, in [PR72584](https://github.com/llvm/llvm-project/pull/72584), which the GNU linker doestn't yet support.
 
 The build log of Android: https://github.com/dianqk/rust-140686-141306-141737/actions/runs/15363331249.
+
+I have asked if it's possible to revert it: https://github.com/llvm/llvm-project/pull/72584#issuecomment-2925139275.
