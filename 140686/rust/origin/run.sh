@@ -8,9 +8,9 @@ RUSTFLAGS="-Clink-arg=-ld_classic" cargo build --release --target x86_64-apple-d
 
 echo "Using -ld_classic"
 nc -l localhost 8888 &
-timeout 1 ./target/x86_64-apple-darwin/release/origin
+./target/x86_64-apple-darwin/release/origin
 
 cargo build --release --target x86_64-apple-darwin
 echo "Not using -ld_classic"
 nc -l localhost 8888 &
-timeout 1 ./target/x86_64-apple-darwin/release/origin
+./target/x86_64-apple-darwin/release/origin
