@@ -1,0 +1,74 @@
+name: PR141306
+
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  ring:
+    runs-on: macos-14
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - run: ./ring.sh $XCODE_PATH
+        working-directory: ./141306
+        continue-on-error: true
+        env:
+          XCODE_PATH: "/Applications/Xcode-15.2.0.app/Contents/Developer"
+      - run: ./ring.sh $XCODE_PATH
+        working-directory: ./141306
+        continue-on-error: true
+        env:
+          XCODE_PATH: "/Applications/Xcode-15.3.0.app/Contents/Developer"
+      - run: ./ring.sh $XCODE_PATH
+        working-directory: ./141306
+        continue-on-error: true
+        env:
+          XCODE_PATH: "/Applications/Xcode-15.4.0.app/Contents/Developer"
+      - run: ./ring.sh $XCODE_PATH
+        working-directory: ./141306
+        continue-on-error: true
+        env:
+          XCODE_PATH: "/Applications/Xcode-16.1.0.app/Contents/Developer"
+      - run: ./ring.sh $XCODE_PATH
+        working-directory: ./141306
+        continue-on-error: true
+        env:
+          XCODE_PATH: "/Applications/Xcode-16.2.0.app/Contents/Developer"
+  minimum:
+    runs-on: macos-14
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - run: ./minimum.sh $XCODE_PATH
+        working-directory: ./141306
+        continue-on-error: true
+        env:
+          XCODE_PATH: "/Applications/Xcode-15.2.0.app/Contents/Developer"
+      - run: ./minimum.sh $XCODE_PATH
+        working-directory: ./141306
+        continue-on-error: true
+        env:
+          XCODE_PATH: "/Applications/Xcode-15.3.0.app/Contents/Developer"
+      - run: ./minimum.sh $XCODE_PATH
+        working-directory: ./141306
+        continue-on-error: true
+        env:
+          XCODE_PATH: "/Applications/Xcode-15.4.0.app/Contents/Developer"
+      - run: ./minimum.sh $XCODE_PATH
+        working-directory: ./141306
+        continue-on-error: true
+        env:
+          XCODE_PATH: "/Applications/Xcode-16.1.0.app/Contents/Developer"
+      - run: ./minimum.sh $XCODE_PATH
+        working-directory: ./141306
+        continue-on-error: true
+        env:
+          XCODE_PATH: "/Applications/Xcode-16.2.0.app/Contents/Developer"
