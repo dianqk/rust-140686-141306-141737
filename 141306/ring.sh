@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 sudo xcode-select -s $1
 xcode-select -p
 pushd ring
