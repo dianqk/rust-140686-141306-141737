@@ -318,7 +318,7 @@ checksum = "6dbf3de79e51f3d586ab4cb9d5c3e2c14aa28ed23d180cf89b4df0454a69cc87"
 [[package]]
 name = "hyper"
 version = "1.6.0"
-source = "git+https://github.com/dianqk/hyper.git?rev=c88df7886c74a1ade69c0b4c68eaf570c8111622#c88df7886c74a1ade69c0b4c68eaf570c8111622"
+source = "git+https://github.com/dianqk/hyper.git?rev=d9dba2e1debf7b7db685af53f7829fc995189bdd#d9dba2e1debf7b7db685af53f7829fc995189bdd"
 dependencies = [
  "atomic-waker",
  "bytes",
