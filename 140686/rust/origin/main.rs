@@ -5,12 +5,17 @@ fn main() {
     eprintln!("{len}");
 }
 
+pub fn extend_from_slice(dst: &mut Vec<u8>, other: &[u8]) {
+    dst.extend_from_slice(other);
+}
+
 #[inline(never)]
+#[no_mangle]
 pub fn broken_func(version: usize, mut dst: Vec<u8>) -> usize {
     match version {
-        1 => dst.extend_from_slice(b"aaaaaaaa"),
-        2 => dst.extend_from_slice(b"bbbbbbbb"),
-        3 => dst.extend_from_slice(b"bbbbbbbb"),
+        1 => extend_from_slice(&mut dst, b"aaaaaaaa"),
+        2 => extend_from_slice(&mut dst, b"bbbbbbbb"),
+        3 => extend_from_slice(&mut dst, b"bbbbbbbb"),
         _ => panic!(),
     }
     dst.len()
