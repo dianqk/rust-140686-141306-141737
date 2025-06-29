@@ -1,20 +1,19 @@
 #!/usr/bin/env bash
 
-export MACOSX_DEPLOYMENT_TARGET="10.12"
 xcode-select -p
 xcode-select -v
 clang --version
 rustc -vV
 
-RUSTFLAGS="-Clink-arg=-ld_classic" cargo build --release --target x86_64-apple-darwin
+RUSTFLAGS="-Clink-arg=-ld_classic" cargo build --release --target x86_64-apple-darwin --target-dir ld_classic
+cargo build --release --target x86_64-apple-darwin --target-dir no_ld_classic
 
 echo "Using -ld_classic"
 nc -l localhost 8888 &
-./target/x86_64-apple-darwin/release/origin
+./ld_classic/x86_64-apple-darwin/release/origin
 
-cargo build --release --target x86_64-apple-darwin
 echo "Not using -ld_classic"
 nc -l localhost 8888 &
-./target/x86_64-apple-darwin/release/origin
+./no_ld_classic/x86_64-apple-darwin/release/origin
 
-rustc -Copt-level=3 -Ccodegen-units=256 -Clink-arg=-ld_classic --target x86_64-apple-darwin main.rs && ./main
+# rustc -Copt-level=3 -Ccodegen-units=256 -Clink-arg=-ld_classic --target x86_64-apple-darwin main.rs && ./main
