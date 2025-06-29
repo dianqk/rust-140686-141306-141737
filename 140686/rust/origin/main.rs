@@ -2,7 +2,6 @@ fn main() {
     let dst: Vec<u8> = Vec::new();
     let len = broken_func(2, dst);
     assert_eq!(len, 8);
-    eprintln!("{len}");
 }
 
 #[inline(never)]
