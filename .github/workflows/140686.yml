@@ -10,19 +10,9 @@ env:
 jobs:
   rust:
     runs-on: macos-15
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
       - run: ./run.sh /Applications/Xcode_16.3.app/Contents/Developer
         working-directory: ./140686/rust/origin
-  cpp:
-    runs-on: macos-15
-    continue-on-error: true
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: recursive
-      - run: ./run.sh /Applications/Xcode_16.3.app/Contents/Developer
-        working-directory: ./140686/cpp
