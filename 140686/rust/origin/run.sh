@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+export MACOSX_DEPLOYMENT_TARGET="10.12"
 xcode-select -p
 xcode-select -v
 clang --version
