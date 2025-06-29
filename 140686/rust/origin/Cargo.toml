@@ -5,6 +5,3 @@ edition = "2024"
 
 [dependencies]
 reqwest = { version = "0.12.18", features = ["blocking"] }
-
-[patch.crates-io]
-hyper = { git = "https://github.com/dianqk/hyper.git", rev = "d9dba2e1debf7b7db685af53f7829fc995189bdd" }
